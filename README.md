@@ -1,2 +1,2 @@
 # Simple-Dictionary
-A simple interactive word and definition dictionary.
+A simple, interactive word and definition dictionary.
