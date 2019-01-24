@@ -2,7 +2,7 @@ import json
 import difflib
 from difflib import SequenceMatcher, get_close_matches
 
-### Returns a key value pair of input word / actual word and definition ###
+### Returns a key value pair of input word (or it's closest match) and it's definition ###
 def translate(word):
     if word in data:
         return {word: data[word]}
@@ -21,7 +21,12 @@ def translate(word):
 data = json.load(open("data.json"))
 word = input("Enter word: ").lower()
 
-definitions = translate(word)
-print(definitions)
 
-# print(data)
+wd = translate(word)
+word = list(wd.keys())
+definitions = list(wd.values())
+
+print(" \t->%s" %word[0])
+
+for e, i in enumerate(definitions[0]):
+    print('%s\t%s' %(e+1, i))
